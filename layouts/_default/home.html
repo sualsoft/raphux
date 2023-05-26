@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+  {{ partial "head.html" .}}
+  <body>
+    <div class="container">
+      {{ partial "details.html"}}
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <!---->
+          {{partial "aboutMe.html"}}
+          <!---->
+          {{ partial "experiences.html"}}
+        </div>
+        <!---->
+        {{ partial "contact.html"}}
+      </div>
+    </div>
+    {{ partial "script.html"}}
+  </body>
+</html>
