@@ -1,258 +1,45 @@
+{{ with .GetPage "experiences" }}
+<!---->
+{{if .Params.enable}}
+<!-- EXPERIENCES -->
+<div class="box">
+  <h2>Expériences</h2>
+  <!---->
+  {{ range .Params.items}}
+  <div class="job clearfix">
+    <div class="col-xs-3">
+      <div class="where">{{.title}}</div>
+      <div class="year">{{.year}}</div>
+    </div>
+    <div class="col-xs-9">
+      <div class="profession">{{.job_title}}</div>
+      <div class="description">
+        {{.job_description}}
+        <!---->
+        {{with .achievements}}
+        <div class="realisation">
+          <h3>{{.title}}</h3>
+          {{range.list}}
+          <div class="list">- {{. | markdownify}}</div>
+          {{end}}
+        </div>
+        {{end}}
 
-  
-  <!-- EXPERIENCES -->
-  <div class="box">
-    <h2>Expériences</h2>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">LittleBig Connection</div>
-        <div class="year">2019 - En cours</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Ingénieur système / Devops, 100% télétravail</div>
-        <div class="description">Au sein d'une équipe d'admin, afin d'apporter de la "séniorité" et des <i>best practice</i> systèmes.
-<div class="realisation"><h3>Réalisations diverses&#8239;:</h3>
-<div class="list">- Reprise et amélioration du code Ansible existant&#8239;;</div>
-<div class="list">- Mise en place de l'IPv6&#8239;;</div>
-<div class="list">- Mise en place d'un système de backup&#8239;;</div>
-<div class="list">- Sécurisation de données sensibles via <a href=https://www.vaultproject.io/>Vault (HashiCorp)</a>&#8239;;</div>
-<div class="list">- Mise en place de <a href=https://www.passhport.org>PaSSHport</a>.</div>
-</div>
-<div class="technologie"><h3>Technologies&#8239;:</h3>
-<div class="tag_rounded">Ansible</div>
-<div class="tag_rounded">GIT</div>
-<div class="tag_rounded">Docker</div>
-<div class="tag_rounded">Jinja2</div>
-<div class="tag_rounded">Vault</div>
-<div class="tag_rounded">Terraform</div>
-<div class="tag_rounded">Proxmox</div>
-<div class="tag_rounded">LXC</div>
-<div class="tag_rounded">BackupPC</div>
-</div>
-</div>
-      </div>
-</div>
-
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">THALES Global System</div>
-        <div class="year">2019</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Mission courte d'Ingénieur Linux Devops</div>
-<div class="description">Au sein de l'équipe de normes et standards, j'ai eu pour principale mission d'amener mes connaissances de la distribution Ubuntu.
-<div class="realisation"><h3>Réalisations&#8239;:</h3>
-<div class="list">- Industrialisation d'une AMI Ubuntu sécurisée, selon les recommandations <a href=https://www.cisecurity.org/>CIS</a>&#8239;;</div>
-<div class="list">- Installation de PaSSHport dans un lab&#8239;;</div>
-<div class="list">- Mise en place d'une CI pour la génération d'OVA avec Packer avec GitLab et Jenkins.</div>
-</div>
-<div class="technologie"><h3>Technologies&#8239;:</h3>
-<div class="tag_rounded">Packer</div>
-<div class="tag_rounded">Jenkins</div>
-<div class="tag_rounded">GitLab</div>
-<div class="tag_rounded">Ubuntu</div>
-<div class="tag_rounded">CIS-Assessor</div>
-<div class="tag_rounded">AWS</div>
-<div class="tag_rounded">git</div>
-</div>
-</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">LibrIT</div>
-        <div class="year">2016-2018</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Ingénierie, PaSSHport</div>
-<div class="description">Développement de la clientèle LibrIT, pour qui j’interviens sur des projets d’ingénieries OpenSource/Linux. Développement de la solution <a href=https://www.passhport.org>PaSSHport</a>, qui permet de gérer de manière centralisée les accès aux serveurs Unix.
-<div class="realisation"><h3>Réalisations&#8239;:</h3>
-<div class="list">- Dockerisation de PaSSHport</div>
-<div class="list">- Écriture d'une doc en gettext avec traduction</div>
-<div class="list">- Formation supervision</div>
-<div class="list">- Mise en place d'une HA basée sur heartbeat/pacemaker</div>
-<div class="list">- Serveur de BackUp pour Start-up</div>
-<div class="list">- Évaluation de solutions d'orchestration de parc</div>
-<div class="list">- Étude et installation de PaSSHport chez JCDecaux</div>
-<div class="list">- Centralisation de logs</div>
-<div class="list">- Mise en place d'une PKI</div>
-</div>
-<div class="technologie"><h3>Technologies&#8239;:</h3>
-<div class="tag_rounded">Docker</div>
-<div class="tag_rounded">gettext</div>
-<div class="tag_rounded">readthedocs</div>
-<div class="tag_rounded">BackupPC</div>
-<div class="tag_rounded">HeartBeat</div>
-<div class="tag_rounded">Pacemaker</div>
-<div class="tag_rounded">Centreon</div>
-<div class="tag_rounded">PERL</div>
-<div class="tag_rounded">check_mk</div>
-<div class="tag_rounded">Markdown</div>
-<div class="tag_rounded">Saltstack</div>
-<div class="tag_rounded">Ansible</div>
-<div class="tag_rounded">PaSSHport</div>
-<div class="tag_rounded">PostgreSQL</div>
-<div class="tag_rounded">DRBD</div>
-<div class="tag_rounded">GrayLog</div>
-<div class="tag_rounded">git</div>
-<div class="tag_rounded">bcache</div>
-<div class="tag_rounded">EJBCA</div>
-</div>
-</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">JCDecaux</div>
-        <div class="year">2011-2016</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Référent / ingénieur Linux</div>
-        <div class="description">En mode régie via ma société (LibrIT), j'ai occupé le poste de référent Linux/OpenSource à l'ingénierie/DSI de JCDecaux (Plaisir – 78370).
-<div class="realisation"><h3>Réalisations&#8239;:</h3>
-<div class="list">- Mise en place d'une centralisation de logs</div>
-<div class="list">- Upgrade du socle technique slackware</div>
-<div class="list">- Déploiement du firewall principal pour filiale Londonienne</div>
-<div class="list">- Responsable Ingénieurie supervision</div>
-<div class="list">- Amélioration de la satisfaction "client"</div>
-<div class="list">- Sécurisation du suivi des structures écrans géants @CDG</div>
-<div class="list">- Support N3</div>
-</div>
-<div class="technologie"><h3>Technologies&#8239;:</h3>
-<div class="tag_rounded">Graylog2</div>
-<div class="tag_rounded">Logstash</div>
-<div class="tag_rounded">Slackware</div>
-<div class="tag_rounded">Centreon</div>
-<div class="tag_rounded">Request Tracker</div>
-<div class="tag_rounded">RedHat</div>
-<div class="tag_rounded">Netfilter/IPTables</div>
-<div class="tag_rounded">Pacemaker</div>
-<div class="tag_rounded">PERL</div>
-<div class="tag_rounded">Squid</div>
-<div class="tag_rounded">Apache</div>
-<div class="tag_rounded">Heartbeat</div>
-<div class="tag_rounded">OpenVPN</div>
-<div class="tag_rounded">SquidGuard</div>
-<div class="tag_rounded">bind</div>
-<div class="tag_rounded">Samba</div>
-<div class="tag_rounded">OpenVPN</div>
-<div class="tag_rounded">Bash</div>
-</div>
-</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">LibrIT</div>
-        <div class="year">2011</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Création de l'entreprise LibrIT</div>
-<div class="description">SAS au capital de 10.000 euros dans laquelle m'a rejoint <a href=https://cv.nixtrib.fr>Erwan Le Gall</a> associé en 2013. LibrIT propose des services généralistes du monde Opensource/Linux. Elle compte parmi ses clients JCDecaux, Perfony, Thales Global System, PrêtGo, Headoo, CDG04, CDG44 (contact sur simple demande).</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">IONIS-STM (ex Master EPITA)</div>
-        <div class="year">2009-2019</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Enseignant/Formateur</div>
-        <div class="description">J'ai dispensé pendant 10 ans, à l'école IONIS-STM (ex «Masters EPITA»), 12 heures de cours sur la sécurisation d'architectures réseaux («FireWall»), et 12 heures de cours sur l'administration d'un système Linux. Le public cible est composé principalement d'étudiants BAC+5, futurs diplômés en sécurité informatique.</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">OMNIKLES</div>
-        <div class="year">2008-2011</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Responsable infrastructure</div>
-<div class="description">De juillet 2008 à juillet 2011, j’ai occupé le poste de responsable infrastructure au sein  d'OMNIKLES (www.omnikles.com), éditeur logiciel en mode SaaS. J'étais garant de l'ensemble de la production, des choix technologiques associés, et du parc interne d'OMNIKLES. Relations humaines et systèmes libres (Debian, OpenBSD, Ubuntu…) ont composé mon quotidien.
-<div class="realisation"><h3>Réalisations&#8239;:</h3>
-<div class="list">- Industrialisation des mises en production</div>
-<div class="list">- Amélioration du ROI via la virtualisation</div>
-<div class="list">- Réduction à 0% du risque de perte de données clients</div>
-<div class="list">- Sécurisation des transits de données inter DC</div>
-<div class="list">- Mise en place d'un outil de ticketing</div>
-<div class="list">- Définition et mise en place de "best-practice" sécurité</div>
-<div class="list">- Politique proactive via la supervision</div>
-</div>
-<div class="technologie"><h3>Technologies&#8239;:</h3>
-<div class="tag_rounded">PERL</div>
-<div class="tag_rounded">Apache</div>
-<div class="tag_rounded">Debian</div>
-<div class="tag_rounded">Nagios</div>
-<div class="tag_rounded">Request Tracker</div>
-<div class="tag_rounded">OpenBSD</div>
-<div class="tag_rounded">Netfilter/IPTables</div>
-<div class="tag_rounded">DRBD</div>
-<div class="tag_rounded">PacketFilter</div>
-<div class="tag_rounded">Conntrackd</div>
-<div class="tag_rounded">Apache</div>
-<div class="tag_rounded">libvirt</div>
-<div class="tag_rounded">pfsync</div>
-<div class="tag_rounded">KVM</div>
-<div class="tag_rounded">bind</div>
-<div class="tag_rounded">Bash</div>
-<div class="tag_rounded">JunOS</div>
-<div class="tag_rounded">BackupPC</div>
-</div>
-</div>
-      </div>
-    </div>
-    <div class="job clearfix">
-      <div class="col-xs-3">
-        <div class="where">LINAGORA</div>
-        <div class="year">2005-2008</div>
-      </div>
-      <div class="col-xs-9">
-        <div class="profession">Ingénieur Linux</div>
-<div class="description">Première expérience professionelle à temps plein. Réalisation de plusieurs missions et régies, aux seins de PME et grands groupes internationaux en passant par des sites militaires.</div>
+        <!--Technology-->
+        {{with .technology}}
+        <div class="technologie">
+          <h3>{{.title}}</h3>
+          <!---->
+          {{ range.items}}
+          <div class="tag_rounded">{{.}}</div>
+          {{end}}
+        </div>
+        {{end}}
       </div>
     </div>
   </div>
-  <!-- EDUCATION -->
-  <div class="box">
-    <h2>Formation / Diplômes / Certifications</h2>
-    <ul id="education" class="clearfix">
-      <li>
-        <div class="year pull-left">2020</div>
-        <div class="description pull-right">
-          <h3>Certified Kubernetes Application Developer</h3>
-<p>La "CKAD" certifie la capacité à concevoir, créer, configurer et exposer des applications natives «cloud» pour Kubernetes.</p>
-<p>Décernée par la Linux Foundation. Certificat disponible <a href=cv-odp-pdf/raphal-berlamont-certified-kubernetes-application-developer-ckad-certificate.pdf>ici</a>.</p>
-        </div>
-      </li>
-      <li>
-        <div class="year pull-left">2006</div>
-        <div class="description pull-right">
-          <h3>Master EPITA (IONIS-STM)</h3>
-          <p>Formation BAC+5 en securité informatique. Acquisition de connaissances de managment de projets, d'économie, de droits, en plus de compétences spécialisées en sécurité informatique.</p>
-<p>J'y ai aussi passé le TOEIC, évalué à 790.</p>
-        </div>
-      </li>
-      <li>
-        <div class="year pull-left">2004</div>
-        <div class="description pull-right">
-          <h3>Diplômé d'ISCIO</h3>
-          <p>Formation BAC+4 de 2 ans, diplômante et certifiante, qui m'a fait plonger dans l'univers OpenSource, Linux et le réseau.</p>
-<p>J'y ai passé quelques certifications, comme "Windows server", Cisco "CCNA", et RedHat "RHCT".</p>
-        </div>
-      </li>
-      <li>
-        <div class="year pull-left">2002</div>
-        <div class="description pull-right">
-          <h3>DEUST - Polytech Paris (Ex IFITEP)</h3>
-          <p>Formation diplomante en 2 ans en prépa intégrée. Obtention du DEUST.</p>
-        </div>
-      </li>
-      <li>
-        <div class="year pull-left">2000</div>
-        <div class="description pull-right">
-          <h3>BAC STI - Génie électronique</h3>
-<p>Fin du cycle secondaire, sanctionné par une mention.</p>
-        </div>
-      </li>
-    </ul>
-  </div>
+  {{end}}
+</div>
+{{end}}
+<!---->
+{{end}}

@@ -3,16 +3,36 @@
   {{ partial "head.html" .}}
   <body>
     <div class="container">
-      {{ partial "details.html"}}
+      {{ partial "details.html" .}}
       <div class="row">
         <div class="col-xs-12 col-sm-7">
           <!---->
-          {{partial "aboutMe.html"}}
+          {{partial "aboutMe.html" .}}
           <!---->
-          {{ partial "experiences.html"}}
+          {{ partial "experiences.html" .}}
+          <!---->
+          {{ partial "formations.html" .}}
         </div>
         <!---->
-        {{ partial "contact.html"}}
+        <div class="col-xs-12 col-sm-5">
+          <!---->
+          {{ partial "contact.html" .}}
+          <!---->
+          {{ partial "softSkills.html" .}}
+          <!---->
+
+          {{ partial "hardSkills.html" .}}
+          <!---->
+
+          {{ partial "toolsSkills.html" .}}
+
+          <!---->
+          {{ partial "languages.html" .}}
+          <!---->
+          {{ partial "toolsAndTeck.html" .}}
+          <!---->
+          {{ partial "hobbies.html" .}}
+        </div>
       </div>
     </div>
     {{ partial "script.html"}}
