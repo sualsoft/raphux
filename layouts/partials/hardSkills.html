@@ -1,14 +1,10 @@
+{{ with .GetPage "hardSkills"}}
 <div class="box">
-  <h2>Hard skills</h2>
+  <h2>{{.Title}}</h2>
   <div class="skills">
-    <div class="item-skills" data-percent="1.00">Systèmes d'exploitation</div>
-    <div class="item-skills" data-percent="1.00">Scripting</div>
-    <div class="item-skills" data-percent="0.85">
-      Kubernetes Application Developer
-    </div>
-    <div class="item-skills" data-percent="0.80">Réseau</div>
-    <div class="item-skills" data-percent="0.75">Supervision</div>
-    <div class="item-skills" data-percent="0.70">DevOps</div>
+    {{ range .Params.items}}
+    <div class="item-skills" data-percent="{{.percentage}}">{{.title}}</div>
+    {{end}}
     <div class="skills-legend clearfix">
       <div class="legend-left legend">Padawan</div>
       <div class="legend-left legend"><span>Compétent</span></div>
@@ -17,3 +13,4 @@
     </div>
   </div>
 </div>
+{{end}}

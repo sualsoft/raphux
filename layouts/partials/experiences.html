@@ -27,6 +27,8 @@
 
         <!--Technology-->
         {{with .technology}}
+        <!---->
+        {{if .enable}}
         <div class="technologie">
           <h3>{{.title}}</h3>
           <!---->
@@ -34,6 +36,8 @@
           <div class="tag_rounded">{{.}}</div>
           {{end}}
         </div>
+        {{end}}
+        <!---->
         {{end}}
       </div>
     </div>

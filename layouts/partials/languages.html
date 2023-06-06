@@ -1,37 +1,20 @@
 <!-- LANGUAGES -->
+{{ with .GetPage "languages"}}
 <div class="box">
-  <h2>Languages</h2>
+  <h2>{{.Title}}</h2>
   <div id="language-skills">
+    {{ range .Params.languages }}
     <div class="skill">
-      Français
+      {{ .name }}
       <div class="icons pull-right">
         <div style="width: 100%" class="icons-red">
+          {{ $stars := .stars }} {{ range $i, $ := seq $stars }}
           <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
+          {{ end }}
         </div>
       </div>
     </div>
-    <div class="skill">
-      Anglais
-      <div class="icons pull-right">
-        <div style="width: 100%" class="icons-red">
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-          <span class="fa fa-star fa-fw"></span>
-        </div>
-      </div>
-    </div>
-    <div class="skill">
-      Japonais
-      <div class="icons pull-right">
-        <div style="width: 100%" class="icons-red">
-          <span class="fa fa-star fa-fw"></span>
-        </div>
-      </div>
-    </div>
+    {{ end }}
   </div>
 </div>
+{{ end}}

@@ -1,14 +1,11 @@
 <!-- SKILLS -->
+{{ with .GetPage "softSkills"}}
 <div class="box">
-  <h2>Soft skills</h2>
+  <h2>{{.Title}}</h2>
   <div class="skills">
-    <div class="item-skills" data-percent="1.00">Résolution de problèmes</div>
-    <div class="item-skills" data-percent="1.00">Force de proposition</div>
-    <div class="item-skills" data-percent="0.95">Veille techno</div>
-    <div class="item-skills" data-percent="0.90">Communication</div>
-    <div class="item-skills" data-percent="0.70">Collaboration</div>
-    <div class="item-skills" data-percent="0.60">Réflexion critique</div>
-    <div class="item-skills" data-percent="0.25">Management</div>
+    {{ range .Params.items}}
+    <div class="item-skills" data-percent="{{.percentage}}">{{.title}}</div>
+    {{end}}
     <div class="skills-legend clearfix">
       <div class="legend-left legend">Capable</div>
       <div class="legend-left legend"><span>Pratiquant</span></div>
@@ -17,3 +14,4 @@
     </div>
   </div>
 </div>
+{{end}}

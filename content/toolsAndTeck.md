@@ -1,0 +1,31 @@
+---
+title: OUTILS & TECHNOS DIVERS
+skill:
+  - AWS
+  - Ansible
+  - Apache
+  - BackupPC
+  - Centreon
+  - DRBD
+  - Docker
+  - Gentoo
+  - Git
+  - Heartbeat
+  - IPv6
+  - Jenkins
+  - K8s/Kubernetes
+  - LFS
+  - Libvirt
+  - Logstash
+  - NGiNX
+  - OpenBSD
+  - OpenVPN
+  - PFsense
+  - Pacemaker
+  - Packer
+  - Postfix
+  - Request
+  - Tracker
+  - Varnish
+  - Vault
+---

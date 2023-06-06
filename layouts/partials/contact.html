@@ -1,4 +1,5 @@
 <!-- CONTACT -->
+{{ with .GetPage "contact"}}
 <div class="box clearfix">
   <h2>Contact</h2>
   <div class="contact-item">
@@ -6,7 +7,7 @@
       <span class="fa fa-phone fa-fw"></span>
     </div>
     <div class="title only pull-right">
-      <a href="tel:+33664928257">+336 64 92 82 57</a>
+      <a href="tel:{{.Params.phone}}">{{.Params.phone}}</a>
     </div>
   </div>
   <div class="contact-item">
@@ -14,47 +15,19 @@
       <span class="fa fa-envelope fa-fw"></span>
     </div>
     <div class="title only pull-right">
-      <a href="mailto=raphael.berlamont@raphux.com"
-        >raphael.berlamont@raphux.com</a
-      >
+      <a href="{{.Params.mail}}">{{.Params.mail}}</a>
     </div>
   </div>
+  {{range .Params.social_media}}
   <div class="contact-item">
     <div class="icon pull-left text-center">
-      <span class="fa fa-twitter fa-fw"></span>
+      <span class=" {{.icon}} "></span>
     </div>
-    <div class="title pull-right">Twitter</div>
+    <div class="title pull-right">{{.name}}</div>
     <div class="description pull-right">
-      <a href="https://twitter.com/raphux">https://twitter.com/raphux</a>
+      <a href="{{.link}}">{{.link}}</a>
     </div>
   </div>
-  <div class="contact-item">
-    <div class="icon pull-left text-center">
-      <span class="fa fa-linkedin fa-fw"></span>
-    </div>
-    <div class="title pull-right">Linkedin</div>
-    <div class="description pull-right">
-      <a href="https://www.linkedin.com/in/raphaël-berlamont"
-        >https://www.linkedin.com/in/raphaël-berlamont</a
-      >
-    </div>
-  </div>
-  <div class="contact-item">
-    <div class="icon pull-left text-center">
-      <span class="fa fa-github fa-fw"></span>
-    </div>
-    <div class="title pull-right">github</div>
-    <div class="description pull-right">
-      <a href="https://github.com/raphux">https://github.com/raphux</a>
-    </div>
-  </div>
-  <div class="contact-item">
-    <div class="icon pull-left text-center">
-      <span class="fa fa-file-pdf-o fa-fw"></span>
-    </div>
-    <div class="title pull-right">CV en PDF</div>
-    <div class="description pull-right">
-      <a href="cv-odp-pdf/CV_Raphael_Berlamont.pdf">CV_Raphael_Berlamont.pdf</a>
-    </div>
-  </div>
+  {{end}}
 </div>
+{{end}}

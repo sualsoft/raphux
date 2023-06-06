@@ -1,44 +1,17 @@
 <!-- EDUCATION -->
+{{ with .GetPage "formations" }}
 <div class="box">
-  <h2>Formation / Diplômes / Certifications</h2>
+  <h2>{{.Title}}</h2>
   <ul id="education" class="clearfix">
+    {{ range .Params.certificates}}
     <li>
-      <div class="year pull-left">2020</div>
+      <div class="year pull-left">{{.year}}</div>
       <div class="description pull-right">
-        <h3>Certified Kubernetes Application Developer</h3>
-<p>La "CKAD" certifie la capacité à concevoir, créer, configurer et exposer des applications natives «cloud» pour Kubernetes.</p>
-<p>Décernée par la Linux Foundation. Certificat disponible <a href=cv-odp-pdf/raphal-berlamont-certified-kubernetes-application-developer-ckad-certificate.pdf>ici</a>.</p>
+        <h3>{{.title}}</h3>
+        <p>{{.description | safeHTML | markdownify }}</p>
       </div>
     </li>
-    <li>
-      <div class="year pull-left">2006</div>
-      <div class="description pull-right">
-        <h3>Master EPITA (IONIS-STM)</h3>
-        <p>Formation BAC+5 en securité informatique. Acquisition de connaissances de managment de projets, d'économie, de droits, en plus de compétences spécialisées en sécurité informatique.</p>
-<p>J'y ai aussi passé le TOEIC, évalué à 790.</p>
-      </div>
-    </li>
-    <li>
-      <div class="year pull-left">2004</div>
-      <div class="description pull-right">
-        <h3>Diplômé d'ISCIO</h3>
-        <p>Formation BAC+4 de 2 ans, diplômante et certifiante, qui m'a fait plonger dans l'univers OpenSource, Linux et le réseau.</p>
-<p>J'y ai passé quelques certifications, comme "Windows server", Cisco "CCNA", et RedHat "RHCT".</p>
-      </div>
-    </li>
-    <li>
-      <div class="year pull-left">2002</div>
-      <div class="description pull-right">
-        <h3>DEUST - Polytech Paris (Ex IFITEP)</h3>
-        <p>Formation diplomante en 2 ans en prépa intégrée. Obtention du DEUST.</p>
-      </div>
-    </li>
-    <li>
-      <div class="year pull-left">2000</div>
-      <div class="description pull-right">
-        <h3>BAC STI - Génie électronique</h3>
-<p>Fin du cycle secondaire, sanctionné par une mention.</p>
-      </div>
-    </li>
+    {{end}}
   </ul>
 </div>
+{{end}}
